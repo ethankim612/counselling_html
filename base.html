@@ -25,6 +25,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            margin: 0;
         }
 
         .sidebar {
@@ -37,6 +38,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            overflow-x: auto;
             overflow-y: auto;
         }
 
@@ -118,6 +120,7 @@
             margin-left: 220px;
             padding: 20px;
             flex: 1;
+            overflow-x: auto;
             overflow-y: auto;
         }
 
@@ -170,23 +173,24 @@
     <div class="sidebar">
         <h2>CSIA ONLINE</h2>
 
-        <h2>학교 내</h2>
+        <h2>In School</h2>
         <ul>
-            <li><a href="#">야간 자율 학습 신청</a></li>
-            <li><a href="#">세미나실 신청</a></li>
-            <li><a href="#">상담실 신청</a></li>
+            <li><a a class="nav-link" value="/yaja" aria-current="page">Yaja</a></li>
+            <li><a class="nav-link" value="/semina" aria-current="page">Semina</a></li>
+            <li><a class="nav-link" value="/counsel" aria-current="page">Counsel</a>
+            </li>
         </ul>
-        <h2>기숙사</h2>
+        <h2>In Dorm</h2>
         <ul>
-            <li><a href="#">야자 4교시 신청</a></li>
-            <li><a href="#">택배 확인</a></li>
-            <li><a href="#">이것 좀 고쳐주세요</a></li>
-            <li><a href="#">노래방</a></li>
+            <li><a a class="nav-link" value="/yaja_after" aria-current="page">야자 4교시 신청</a></li>
+            <li><a a class="nav-link" value="/trans" aria-current="page">택배 확인</a></li>
+            <li><a a class="nav-link" value="/help" aria-current="page">이것 좀 고쳐주세요</a></li>
+            <li><a a class="nav-link" value="/musico" aria-current="page">노래방</a></li>
         </ul>
         <div class="footer">
             <ul>
-                <li><a href="#">공지</a></li>
-                <li><a href="#">문의</a></li>
+                <li><a a class="nav-link" value="/announce" aria-current="page">공지</a></li>
+                <li><a a class="nav-link" value="/question" aria-current="page">문의</a></li>
             </ul>
         </div>
     </div>
@@ -210,7 +214,8 @@
     <!-- Content Wrapper -->
     <div class="content-wrapper">
         <div class="container-fluid" id="content">
-            <!-- Content will be injected here -->
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
     <!-- End of Content Wrapper -->
@@ -239,6 +244,20 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <script>
+        const apiURL = "http://127.0.0.1:8000";
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const value = link.getAttribute('value');
+                if (value) {
+                    window.location.href = apiURL + value;
+                }
+            });
+        });
+    </script>
 
 </body>
 
