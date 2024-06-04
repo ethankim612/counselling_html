@@ -173,34 +173,33 @@
 
 <body id="page-top">
     
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
 
         <h2>CSIA ONLINE</h2>
 
         <h2>In School</h2>
         <ul>
-            <li><a a class="nav-link" value="/yaja" aria-current="page">Yaja</a></li>
-            <li><a class="nav-link" value="/semina" aria-current="page">Semina</a></li>
-            <li><a class="nav-link" value="/counsel" aria-current="page">Counsel</a>
-            </li>
+            <li><a id="yaja-link" class="nav-link" value="/yaja" aria-current="page">Yaja</a></li>
+            <li><a id="semina-link" class="nav-link" value="/semina" aria-current="page">Semina</a></li>
+            <li><a id="counsel-link" class="nav-link" value="/counsel" aria-current="page">Counsel</a></li>
         </ul>
         <h2>In Dorm</h2>
         <ul>
-            <li><a a class="nav-link" value="/yaja_after" aria-current="page">4th - Yaja</a></li>
-            <li><a a class="nav-link" value="/trans" aria-current="page">택배 확인</a></li>
-            <li><a a class="nav-link" value="/help" aria-current="page">이것 좀 고쳐주세요</a></li>
-            <li><a a class="nav-link" value="/musico" aria-current="page">노래방</a></li>
+            <li><a id="yaja-after-link" class="nav-link" value="/yaja_after" aria-current="page">4th - Yaja</a></li>
+            <li><a id="trans-link" class="nav-link" value="/trans" aria-current="page">택배 확인</a></li>
+            <li><a id="help-link" class="nav-link" value="/help" aria-current="page">이것 좀 고쳐주세요</a></li>
+            <li><a id="musico-link" class="nav-link" value="/musico" aria-current="page">노래방</a></li>
         </ul>
         <div class="footer">
             <ul>
-                <li><a a class="nav-link" value="/announce" aria-current="page">공지</a></li>
-                <li><a a class="nav-link" value="/question" aria-current="page">문의</a></li>
+                <li><a id="announce-link" class="nav-link" value="/announce" aria-current="page">공지</a></li>
+                <li><a id="question-link" class="nav-link" value="/question" aria-current="page">문의</a></li>
             </ul>
         </div>
     </div>
     
 
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <a class="navbar-brand" href="#">CSIA ONLINE</a>
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
@@ -214,7 +213,7 @@
     </nav>
     
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="content-wrapper">
         <div class="container-fluid" id="content">
             <div class="container-fluid">
 
@@ -225,7 +224,7 @@
                     <button type="button" class="btn btn-info">3월</button>&nbsp;
                     <button type="button" class="btn btn-primary">Next Week</button>
                 </div>
-                <table class="table table-bordered table-striped text-center">
+                <table class="table table-bordered table-striped text-center" id="reservation-table">
                     <thead>
                         <tr>
                             <th>TimeSlot</th>
@@ -246,31 +245,31 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td id="timeslot-1-mon">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-1-tue">
                                 <p class="fw-normal mb-1 text-danger">Unavailable</p>
                                 <button type="button" class="btn btn-secondary btn-sm btn-rounded" disabled>
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-1-wed">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-1-thu">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-1-fri">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
@@ -286,31 +285,31 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td id="timeslot-2-mon">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-2-tue">
                                 <p class="fw-normal mb-1 text-danger">Unavailable</p>
                                 <button type="button" class="btn btn-secondary btn-sm btn-rounded" disabled>
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-2-wed">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-2-thu">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-2-fri">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
@@ -326,31 +325,31 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td id="timeslot-3-mon">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal2">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-3-tue">
                                 <p class="fw-normal mb-1 text-danger">Unavailable</p>
                                 <button type="button" class="btn btn-secondary btn-sm btn-rounded" disabled>
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-3-wed">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-3-thu">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-3-fri">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
@@ -366,31 +365,31 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td id="timeslot-4-mon">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal3">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-4-tue">
                                 <p class="fw-normal mb-1 text-danger">Unavailable</p>
                                 <button type="button" class="btn btn-secondary btn-sm btn-rounded" disabled>
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-4-wed">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-4-thu">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-4-fri">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
@@ -406,31 +405,31 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td id="timeslot-5-mon">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded" data-bs-toggle="modal" data-bs-target="#exampleModal4">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-5-tue">
                                 <p class="fw-normal mb-1 text-danger">Unavailable</p>
                                 <button type="button" class="btn btn-secondary btn-sm btn-rounded" disabled>
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-5-wed">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-5-thu">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
                                 </button>
                             </td>
-                            <td>
+                            <td id="timeslot-5-fri">
                                 <p class="fw-normal mb-1 text-success">Available</p>
                                 <button type="button" class="btn btn-primary btn-sm btn-rounded">
                                     Make Reservation
@@ -502,7 +501,7 @@
                                 <p>User: {TEST}<br>TimeSlot: 2024-03-11 12:00~12:50<br>OK?</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close"></button>
                                 <button type="button" class="btn btn-primary">Confirm</button>
                             </div>
                         </div>
@@ -519,7 +518,7 @@
                                 <p>User: {TEST}<br>TimeSlot: 2024-03-11 13:00~13:50<br>OK?</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close"></button>
                                 <button type="button" class="btn btn-primary">Confirm</button>
                             </div>
                         </div>
