@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,10 +10,12 @@
 
     <title>CSIA ONLINE</title>
 
+    <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
+    <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <style>
         body {
@@ -73,7 +74,8 @@
         }
 
         .sidebar .footer {
-            margin-top: 30px;
+            margin-top: auto;
+            padding: 20px;
         }
 
         .navbar {
@@ -123,10 +125,6 @@
             overflow-y: auto;
         }
 
-        .container-fluid {
-            padding: 20px;
-        }
-
         h1 {
             font-size: 28px;
             color: #2e59d9;
@@ -161,103 +159,336 @@
 
         .table td {
             vertical-align: middle;
+            position: relative;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            text-align: left;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .dropdown a:hover {
+            background-color: #f8f9fa;
         }
 
         .modal-header,
         .modal-footer {
             border: none;
         }
-        
+
+        .modal.fade .modal-dialog {
+            transform: translate(0, 0);
+            transition: transform 0.3s ease-out;
+        }
+
+        .modal.fade.show .modal-dialog {
+            transform: translate(0, 0);
+        }
+
+        /* Adjust the modal size */
+        .modal-lg {
+            max-width: 80%;
+        }
+
+        .btn-activity {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 8px;
+            background-color: #f8f9fa;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-activity.selected {
+            background-color: #4e73df;
+            color: #ffffff;
+        }
     </style>
 </head>
 
 <body id="page-top">
-    
-    <div class="sidebar" id="sidebar">
 
+    <!-- Sidebar -->
+    <div class="sidebar">
         <h2>CSIA ONLINE</h2>
 
         <h2>In School</h2>
         <ul>
-            <li><a id="yaja-link" class="nav-link" value="/yaja" aria-current="page">Yaja</a></li>
-            <li><a id="semina-link" class="nav-link" value="/semina" aria-current="page">Semina</a></li>
-            <li><a id="counsel-link" class="nav-link" value="/counsel" aria-current="page">Counsel</a></li>
+            <li><a class="nav-link" href="/yaja">Yaja</a></li>
+            <li><a class="nav-link" href="/semina">Seminar</a></li>
+            <li><a class="nav-link" href="/counsel">Counsel</a></li>
         </ul>
         <h2>In Dorm</h2>
         <ul>
-            <li><a id="yaja-after-link" class="nav-link" value="/yaja_after" aria-current="page">4th - Yaja</a></li>
-            <li><a id="trans-link" class="nav-link" value="/trans" aria-current="page">택배 확인</a></li>
-            <li><a id="help-link" class="nav-link" value="/help" aria-current="page">이것 좀 고쳐주세요</a></li>
-            <li><a id="musico-link" class="nav-link" value="/musico" aria-current="page">노래방</a></li>
+            <li><a class="nav-link" href="/yaja_after">야자 4교시 신청</a></li>
+            <li><a class="nav-link" href="/trans">택배 확인</a></li>
+            <li><a class="nav-link" href="/help">이것 좀 고쳐주세요</a></li>
+            <li><a class="nav-link" href="/musico">노래방</a></li>
         </ul>
         <div class="footer">
             <ul>
-                <li><a id="announce-link" class="nav-link" value="/announce" aria-current="page">공지</a></li>
-                <li><a id="question-link" class="nav-link" value="/question" aria-current="page">문의</a></li>
+                <li><a class="nav-link" href="/announce">공지</a></li>
+                <li><a class="nav-link" href="/question">문의</a></li>
             </ul>
         </div>
     </div>
+    <!-- End of Sidebar -->
 
+    <!-- Topbar -->
     <nav class="navbar">
         <a class="navbar-brand" href="#">CSIA ONLINE</a>
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="h_page.html">
+                <a class="nav-link" href="start.html">
                     <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
             </li>
         </ul>
     </nav>
-    
+    <!-- End of Topbar -->
 
-    <div class="content-wrapper" id="content-wrapper">
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
         <div class="container-fluid" id="content">
-            <div class="container-fluid">
-                {yaja management}
+            <div class="container">
+                <h1 class="text-center mb-4">Evening Study Schedule</h1>
+                <table class="table table-bordered table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th>Time Slot</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1st Period</td>
+                            <td id="cell-1-1" onclick="toggleDropdown(1, 1)">-</td>
+                            <td id="cell-1-2" onclick="toggleDropdown(1, 2)">-</td>
+                            <td id="cell-1-3" onclick="toggleDropdown(1, 3)">-</td>
+                            <td id="cell-1-4" onclick="toggleDropdown(1, 4)">-</td>
+                        </tr>
+                        <tr>
+                            <td>2nd Period</td>
+                            <td id="cell-2-1" onclick="toggleDropdown(2, 1)">-</td>
+                            <td id="cell-2-2" onclick="toggleDropdown(2, 2)">-</td>
+                            <td id="cell-2-3" onclick="toggleDropdown(2, 3)">-</td>
+                            <td id="cell-2-4" onclick="toggleDropdown(2, 4)">-</td>
+                        </tr>
+                        <tr>
+                            <td>3rd Period</td>
+                            <td id="cell-3-1" onclick="toggleDropdown(3, 1)">-</td>
+                            <td id="cell-3-2" onclick="toggleDropdown(3, 2)">-</td>
+                            <td id="cell-3-3" onclick="toggleDropdown(3, 3)">-</td>
+                            <td id="cell-3-4" onclick="toggleDropdown(3, 4)">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary" onclick="openWeekModal()">Apply Weekly Schedule</button>
+                </div>
+                <h2 class="mt-4">Current Selection</h2>
+                <div id="summary-content" class="p-3 border rounded bg-white"></div>
             </div>
 
-            
-        </div>
-    </div>
-            </div>
-            
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; CSIA ONLINE 2024</span>
+            <!-- Weekly Modal -->
+            <div class="modal fade" id="modalWeek" tabindex="-1">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Apply Weekly Schedule</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Time Slot</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1st Period</td>
+                                        <td id="week-cell-1-1" onclick="toggleDropdownWeek(1, 1)">-</td>
+                                        <td id="week-cell-1-2" onclick="toggleDropdownWeek(1, 2)">-</td>
+                                        <td id="week-cell-1-3" onclick="toggleDropdownWeek(1, 3)">-</td>
+                                        <td id="week-cell-1-4" onclick="toggleDropdownWeek(1, 4)">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2nd Period</td>
+                                        <td id="week-cell-2-1" onclick="toggleDropdownWeek(2, 1)">-</td>
+                                        <td id="week-cell-2-2" onclick="toggleDropdownWeek(2, 2)">-</td>
+                                        <td id="week-cell-2-3" onclick="toggleDropdownWeek(2, 3)">-</td>
+                                        <td id="week-cell-2-4" onclick="toggleDropdownWeek(2, 4)">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3rd Period</td>
+                                        <td id="week-cell-3-1" onclick="toggleDropdownWeek(3, 1)">-</td>
+                                        <td id="week-cell-3-2" onclick="toggleDropdownWeek(3, 2)">-</td>
+                                        <td id="week-cell-3-3" onclick="toggleDropdownWeek(3, 3)">-</td>
+                                        <td id="week-cell-3-4" onclick="toggleDropdownWeek(3, 4)">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="saveWeeklySelection()">Save changes</button>
+                        </div>
                     </div>
                 </div>
-            </footer>
+            </div>
 
-        </div>
-
-    </div>
-
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+            <!-- Activity Selection Modal -->
+            <div class="modal fade" id="activityModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Select Activity</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group">
+                                <li class="list-group-item" onclick="selectActivityInModal('Evening Study')">Evening Study</li>
+                                <li class="list-group-item" onclick="selectActivityInModal('Early Leave')">Early Leave</li>
+                                <li class="list-group-item" onclick="selectActivityInModal('Off Campus Activity')">Off Campus Activity</li>
+                                <li class="list-group-item" onclick="selectActivityInModal('After School Class')">After School Class</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+            <script>
+                let selectedCell = null;
+
+                function toggleDropdown(period, day) {
+                    const cell = document.getElementById(`cell-${period}-${day}`);
+                    let dropdown = cell.querySelector('.dropdown');
+                    if (dropdown) {
+                        cell.removeChild(dropdown);
+                    } else {
+                        dropdown = document.createElement('div');
+                        dropdown.className = 'dropdown';
+                        dropdown.innerHTML = `
+                            <a href="#" onclick="selectActivityInTable(${period}, ${day}, 'Evening Study')">Evening Study</a>
+                            <a href="#" onclick="selectActivityInTable(${period}, ${day}, 'Early Leave')">Early Leave</a>
+                            <a href="#" onclick="selectActivityInTable(${period}, ${day}, 'Off Campus Activity')">Off Campus Activity</a>
+                            <a href="#" onclick="selectActivityInTable(${period}, ${day}, 'After School Class')">After School Class</a>
+                        `;
+                        cell.appendChild(dropdown);
+                    }
+                }
+
+                function selectActivityInTable(period, day, activity) {
+                    const cell = document.getElementById(`cell-${period}-${day}`);
+                    cell.innerText = activity;
+                    cell.className = 'bg-info text-white';
+                    updateCurrentSelection();
+                    toggleDropdown(period, day); // Close dropdown after selection
+                }
+
+                function openWeekModal() {
+                    const modal = new bootstrap.Modal(document.getElementById('modalWeek'));
+                    modal.show();
+                }
+
+                function toggleDropdownWeek(period, day) {
+                    const cell = document.getElementById(`week-cell-${period}-${day}`);
+                    let dropdown = cell.querySelector('.dropdown');
+                    if (dropdown) {
+                        cell.removeChild(dropdown);
+                    } else {
+                        dropdown = document.createElement('div');
+                        dropdown.className = 'dropdown';
+                        dropdown.innerHTML = `
+                            <a href="#" onclick="selectActivityInWeekTable(${period}, ${day}, 'Evening Study')">Evening Study</a>
+                            <a href="#" onclick="selectActivityInWeekTable(${period}, ${day}, 'Early Leave')">Early Leave</a>
+                            <a href="#" onclick="selectActivityInWeekTable(${period}, ${day}, 'Off Campus Activity')">Off Campus Activity</a>
+                            <a href="#" onclick="selectActivityInWeekTable(${period}, ${day}, 'After School Class')">After School Class</a>
+                        `;
+                        cell.appendChild(dropdown);
+                    }
+                }
+
+                function selectActivityInWeekTable(period, day, activity) {
+                    const cell = document.getElementById(`week-cell-${period}-${day}`);
+                    cell.innerText = activity;
+                    cell.className = 'bg-info text-white';
+                    updateWeekSelection(period, day, activity);
+                    toggleDropdownWeek(period, day); // Close dropdown after selection
+                }
+
+                function updateWeekSelection(period, day, activity) {
+                    const mainCell = document.getElementById(`cell-${period}-${day}`);
+                    mainCell.innerText = activity;
+                    mainCell.className = activity === '' ? '' : 'bg-info text-white';
+                }
+
+                function saveWeeklySelection() {
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('modalWeek'));
+                    modal.hide();
+                }
+
+                function updateCurrentSelection() {
+                    const summary = document.getElementById('summary-content');
+                    const today = new Date();
+                    const day = today.getDay(); // Sunday - Saturday : 0 - 6
+                    if (day === 0 || day === 6) {
+                        summary.innerHTML = "<p class='text-center'>No classes on weekends.</p>";
+                        return;
+                    }
+
+                    summary.innerHTML = '';
+                    const dayIndex = day - 1; // Convert to Monday - Friday : 0 - 4
+                    for (let period = 1; period <= 3; period++) {
+                        const cell = document.getElementById(`cell-${period}-${dayIndex + 1}`);
+                        const activity = cell.innerText;
+                        const timeSlot = document.querySelector(`tbody tr:nth-child(${period}) td:first-child`).innerText;
+                        summary.innerHTML += `<div class="summary-item"><strong>${timeSlot}:</strong> ${activity}</div>`;
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', updateCurrentSelection);
+            </script>
         </div>
     </div>
+    <!-- End of Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; CSIA ONLINE 2024</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -268,7 +499,21 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-</body>
+
+    <script>
+        const apiURL = "http://127.0.0.1:8000";
+
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const value = link.getAttribute('value');
+                if (value) {
+                    window.location.href = apiURL + value;
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
