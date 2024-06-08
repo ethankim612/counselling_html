@@ -175,6 +175,7 @@
             align-items: flex-start;
             width: 100%;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .table-container {
@@ -183,12 +184,15 @@
             margin: 10px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 45%;
+            width: 100%;
+            max-width: 45%;
+            box-sizing: border-box;
         }
 
         .table th,
         .table td {
             text-align: center;
+            width: calc(100% / 5); /* Ensures equal width for all columns */
         }
 
         .table th {
@@ -212,6 +216,38 @@
             box-shadow: inset 0 1px 2px rgb(0 0 0 / 8%);
             transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         }
+
+        @media (max-width: 992px) {
+            .content-wrapper {
+                margin-left: 0;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .navbar {
+                padding-left: 240px;
+            }
+
+            .table-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding-left: 0;
+            }
+
+            .table-container {
+                margin: 10px 0;
+                max-width: 100%;
+            }
+        }
+
     </style>
 
 </head>
